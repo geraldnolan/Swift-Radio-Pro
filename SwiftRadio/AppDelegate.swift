@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import MediaPlayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     weak var stationsViewController: StationsViewController?
+    
+    // CarPlay
+    var playableContentManager: MPPlayableContentManager?
+    let carplayPlaylist = CarPlayPlaylist()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -31,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let navigationController = window?.rootViewController as? UINavigationController {
             stationsViewController = navigationController.viewControllers.first as? StationsViewController
         }
+        
+        setupCarPlay()
         
         return true
     }
