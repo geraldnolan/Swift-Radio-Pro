@@ -402,6 +402,7 @@
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = B529J562AT;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -671,6 +672,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftRadio/SwiftRadio.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B529J562AT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -683,6 +685,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.noltech.muzikyradio;
 				PRODUCT_NAME = SwiftRadio;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Dev-Muziky Radio";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
@@ -697,6 +700,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftRadio/SwiftRadio.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B529J562AT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -709,6 +713,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.noltech.muzikyradio;
 				PRODUCT_NAME = SwiftRadio;
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Dev-Muziky Radio";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
