@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C5545BD1C1124DE00728469 /* SwiftRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */; };
+		4DA6A049F1CF99E5087081E5 /* Pods_SwiftRadioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB2F4900DC5762BC6B9E824 /* Pods_SwiftRadioUITests.framework */; };
 		5F22BA3C1F72AD5A00CB5911 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA1E1F72AD3700CB5911 /* SpringLabel.swift */; };
 		5F22BA3D1F72AD5A00CB5911 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA1F1F72AD3900CB5911 /* BlurView.swift */; };
 		5F22BA3E1F72AD5A00CB5911 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA201F72AD3B00CB5911 /* DesignableTabBarController.swift */; };
@@ -61,6 +62,7 @@
 		CE108E7622060E4B003CDF06 /* CarPlayPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE108E7522060E4B003CDF06 /* CarPlayPlaylist.swift */; };
 		CE108E7A22064B24003CDF06 /* StationsViewController+CarPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE108E7922064B24003CDF06 /* StationsViewController+CarPlay.swift */; };
 		CF72ACE721F7155200461EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF72ACE621F714D000461EED /* Main.storyboard */; };
+		F217E75E02009F0EFC1903E9 /* Pods_SwiftRadio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA47F48757E1DCC49A1B91B /* Pods_SwiftRadio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		2C5545BA1C1124DE00728469 /* SwiftRadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRadioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRadioUITests.swift; sourceTree = "<group>"; };
 		2C5545BE1C1124DE00728469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32881C9443DC40929DC0A656 /* Pods-SwiftRadio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadio.debug.xcconfig"; path = "Target Support Files/Pods-SwiftRadio/Pods-SwiftRadio.debug.xcconfig"; sourceTree = "<group>"; };
+		4DB2F4900DC5762BC6B9E824 /* Pods_SwiftRadioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRadioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F22BA1E1F72AD3700CB5911 /* SpringLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
 		5F22BA1F1F72AD3900CB5911 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		5F22BA201F72AD3B00CB5911 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
@@ -108,9 +112,12 @@
 		5F22BA3A1F72AD5800CB5911 /* AutoTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
 		5F22BA3B1F72AD5900CB5911 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		61687AAA7BD4252EAB68D047 /* Pods-SwiftRadioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadioUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftRadioUITests/Pods-SwiftRadioUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7F712F254C15653ACE12F367 /* Pods-SwiftRadio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadio.release.xcconfig"; path = "Target Support Files/Pods-SwiftRadio/Pods-SwiftRadio.release.xcconfig"; sourceTree = "<group>"; };
 		81AD229821646DEA002ADFDD /* FRadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioPlayer.swift; sourceTree = "<group>"; };
 		81AD229921646DEA002ADFDD /* FRadioAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioAPI.swift; sourceTree = "<group>"; };
 		81AD229A21646DEA002ADFDD /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		8E3F4E303BBEED8B43033194 /* Pods-SwiftRadioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadioUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftRadioUITests/Pods-SwiftRadioUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9409E1161ABF6FEA00312E2B /* SwiftRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9409E11A1ABF6FEA00312E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9409E11B1ABF6FEA00312E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +143,7 @@
 		CE108E7522060E4B003CDF06 /* CarPlayPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayPlaylist.swift; sourceTree = "<group>"; };
 		CE108E7922064B24003CDF06 /* StationsViewController+CarPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StationsViewController+CarPlay.swift"; sourceTree = "<group>"; };
 		CF72ACE621F714D000461EED /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DBA47F48757E1DCC49A1B91B /* Pods_SwiftRadio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRadio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DA6A049F1CF99E5087081E5 /* Pods_SwiftRadioUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F217E75E02009F0EFC1903E9 /* Pods_SwiftRadio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +173,18 @@
 				2C5545BE1C1124DE00728469 /* Info.plist */,
 			);
 			path = SwiftRadioUITests;
+			sourceTree = "<group>";
+		};
+		36BCD32874548451F1B66642 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32881C9443DC40929DC0A656 /* Pods-SwiftRadio.debug.xcconfig */,
+				7F712F254C15653ACE12F367 /* Pods-SwiftRadio.release.xcconfig */,
+				61687AAA7BD4252EAB68D047 /* Pods-SwiftRadioUITests.debug.xcconfig */,
+				8E3F4E303BBEED8B43033194 /* Pods-SwiftRadioUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		5F22B9DE1F72A8D800CB5911 /* Libraries */ = {
@@ -218,6 +240,7 @@
 				2C5545BB1C1124DE00728469 /* SwiftRadioUITests */,
 				9409E1171ABF6FEA00312E2B /* Products */,
 				CE108E6F22060BCE003CDF06 /* Frameworks */,
+				36BCD32874548451F1B66642 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -330,6 +353,8 @@
 		CE108E6F22060BCE003CDF06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBA47F48757E1DCC49A1B91B /* Pods_SwiftRadio.framework */,
+				4DB2F4900DC5762BC6B9E824 /* Pods_SwiftRadioUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,6 +376,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C5545C31C1124DE00728469 /* Build configuration list for PBXNativeTarget "SwiftRadioUITests" */;
 			buildPhases = (
+				1A5B6A38658A0A41EE1474FC /* [CP] Check Pods Manifest.lock */,
 				2C5545B61C1124DE00728469 /* Sources */,
 				2C5545B71C1124DE00728469 /* Frameworks */,
 				2C5545B81C1124DE00728469 /* Resources */,
@@ -369,6 +395,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9409E1381ABF6FEA00312E2B /* Build configuration list for PBXNativeTarget "SwiftRadio" */;
 			buildPhases = (
+				E8DB694902EA0A259341DECF /* [CP] Check Pods Manifest.lock */,
 				9409E1121ABF6FEA00312E2B /* Sources */,
 				9409E1131ABF6FEA00312E2B /* Frameworks */,
 				9409E1141ABF6FEA00312E2B /* Resources */,
@@ -455,6 +482,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A5B6A38658A0A41EE1474FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftRadioUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8DB694902EA0A259341DECF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftRadio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C5545B61C1124DE00728469 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -532,6 +606,7 @@
 /* Begin XCBuildConfiguration section */
 		2C5545C11C1124DE00728469 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61687AAA7BD4252EAB68D047 /* Pods-SwiftRadioUITests.debug.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -549,6 +624,7 @@
 		};
 		2C5545C21C1124DE00728469 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E3F4E303BBEED8B43033194 /* Pods-SwiftRadioUITests.release.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -667,6 +743,7 @@
 		};
 		9409E1391ABF6FEA00312E2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32881C9443DC40929DC0A656 /* Pods-SwiftRadio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftRadio/SwiftRadio.entitlements;
@@ -695,6 +772,7 @@
 		};
 		9409E13A1ABF6FEA00312E2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F712F254C15653ACE12F367 /* Pods-SwiftRadio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftRadio/SwiftRadio.entitlements;
