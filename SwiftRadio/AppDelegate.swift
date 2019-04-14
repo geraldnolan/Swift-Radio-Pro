@@ -8,6 +8,8 @@
 
 import UIKit
 import MediaPlayer
+import AppCenter
+import AppCenterPush
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let navigationController = window?.rootViewController as? UINavigationController {
             stationsViewController = navigationController.viewControllers.first as? StationsViewController
         }
+        
+        MSAppCenter.start("04be9331-03f4-41dc-a327-820fbc330e70", withServices: [MSPush.self])
         
         setupCarPlay()
         

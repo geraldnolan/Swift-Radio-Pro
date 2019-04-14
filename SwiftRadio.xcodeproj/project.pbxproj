@@ -183,7 +183,6 @@
 				61687AAA7BD4252EAB68D047 /* Pods-SwiftRadioUITests.debug.xcconfig */,
 				8E3F4E303BBEED8B43033194 /* Pods-SwiftRadioUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -435,7 +434,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
