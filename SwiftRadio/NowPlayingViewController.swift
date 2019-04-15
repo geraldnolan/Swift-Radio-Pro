@@ -87,6 +87,10 @@ class NowPlayingViewController: UIViewController {
         // Hide / Show Next/Previous buttons
         previousButton.isHidden = hideNextPreviousButtons
         nextButton.isHidden = hideNextPreviousButtons
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        } 
     }
     
     //*****************************************************************
@@ -347,7 +351,7 @@ class NowPlayingViewController: UIViewController {
     }
     
     @IBAction func shareButtonPressed(_ sender: UIButton) {
-        let songToShare = "I'm listening to \(currentTrack.title) on \(currentStation.name) via Swift Radio Pro"
+        let songToShare = "I'm listening to \(currentTrack.title) on \(currentStation.name) via Muziky Radio"
         let activityViewController = UIActivityViewController(activityItems: [songToShare, currentTrack.artworkImage!], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceRect = CGRect(x: view.center.x, y: view.center.y, width: 0, height: 0)
         activityViewController.popoverPresentationController?.sourceView = view

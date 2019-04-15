@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     weak var stationsViewController: StationsViewController?
     
+    
     // CarPlay
     var playableContentManager: MPPlayableContentManager?
     let carplayPlaylist = CarPlayPlaylist()
@@ -29,21 +30,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Make status bar white
         UINavigationBar.appearance().barStyle = .black
         
+        //Make navigation bar transparent
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = true
+       
         // FRadioPlayer config
         FRadioPlayer.shared.isAutoPlay = true
         FRadioPlayer.shared.enableArtwork = true
-        FRadioPlayer.shared.artworkSize = 600
+        FRadioPlayer.shared.artworkSize = 900
         
         // Get weak ref of StationsViewController
         if let navigationController = window?.rootViewController as? UINavigationController {
+            if #available(iOS 11.0, *) {
+                navigationController.navigationBar.prefersLargeTitles = true
+            } else {
+                // Fallback on earlier versions
+            }
             stationsViewController = navigationController.viewControllers.first as? StationsViewController
         }
         
+        //Add Push Notifications
+        MSPush.setDelegate(self as? MSPushDelegate)
+        //Push Notifications
         MSAppCenter.start("04be9331-03f4-41dc-a327-820fbc330e70", withServices: [MSPush.self])
         
         setupCarPlay()
         
         return true
+    }
+    
+    func push(_ push: MSPush!, didReceive pushNotification: MSPushNotification!) {
+        let title: String = pushNotification.title ?? ""
+        var message: String = pushNotification.message ?? ""
+        var customData: String = ""
+        for item in pushNotification.customData {
+            customData =  ((customData.isEmpty) ? "" : "\(customData), ") + "\(item.key): \(item.value)"
+        }
+        if (UIApplication.shared.applicationState == .background) {
+            NSLog("Notification received in background, title: \"\(title)\", message: \"\(message)\", custom data: \"\(customData)\"");
+        } else {
+            message =  message + ((customData.isEmpty) ? "" : "\n\(customData)")
+            
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel))
+            
+            // Show the alert controller.
+            self.window?.rootViewController?.present(alertController, animated: true)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

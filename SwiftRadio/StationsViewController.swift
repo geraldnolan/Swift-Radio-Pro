@@ -18,6 +18,7 @@ class StationsViewController: UIViewController {
     @IBOutlet weak var stationNowPlayingButton: UIButton!
     @IBOutlet weak var nowPlayingAnimationImageView: UIImageView!
     
+    @IBOutlet weak var MenuBarButtonItem: UIBarButtonItem!
     // MARK: - Properties
     
     let radioPlayer = RadioPlayer()
@@ -68,6 +69,9 @@ class StationsViewController: UIViewController {
         tableView.backgroundView = nil
         tableView.separatorStyle = .none
         
+        MenuBarButtonItem.isEnabled = false
+        MenuBarButtonItem.tintColor = .clear
+        
         // Setup Pull to Refresh
         setupPullToRefresh()
         
@@ -105,7 +109,9 @@ class StationsViewController: UIViewController {
         refreshControl.backgroundColor = .black
         refreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        tableView.addSubview(refreshControl)
+        
+        //tableView.backgroundColor = .black;
+        //tableView.addSubview(refreshControl)
     }
     
     func createNowPlayingAnimation() {
@@ -206,7 +212,7 @@ class StationsViewController: UIViewController {
             guard let currentStation = self.radioPlayer.station else { return }
             
             // Reset everything if the new stations list doesn't have the current station
-            if self.stations.index(of: currentStation) == nil { self.resetCurrentStation() }
+            if self.stations.firstIndex(of: currentStation) == nil { self.resetCurrentStation() }
         }
     }
     
@@ -241,7 +247,7 @@ class StationsViewController: UIViewController {
     }
     
     private func getIndex(of station: RadioStation?) -> Int? {
-        guard let station = station, let index = stations.index(of: station) else { return nil }
+        guard let station = station, let index = stations.firstIndex(of: station) else { return nil }
         return index
     }
     
@@ -359,6 +365,8 @@ extension StationsViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "NowPlaying", sender: indexPath)
     }
+    
+    
 }
 
 //*****************************************************************
@@ -379,6 +387,8 @@ extension StationsViewController: UISearchResultsUpdating {
         tableView.tableHeaderView?.backgroundColor = UIColor.clear
         definesPresentationContext = true
         searchController.hidesNavigationBarDuringPresentation = false
+        
+        searchController.searchBar.searchBarStyle = .minimal
         
         // Style the UISearchController
         searchController.searchBar.barTintColor = UIColor.clear
