@@ -106,12 +106,13 @@ class StationsViewController: UIViewController {
     
     func setupPullToRefresh() {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: [.foregroundColor: UIColor.white])
-        refreshControl.backgroundColor = .black
+        refreshControl.backgroundColor = .clear
         refreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         //tableView.backgroundColor = .black;
         //tableView.addSubview(refreshControl)
+        tableView.refreshControl = refreshControl;
     }
     
     func createNowPlayingAnimation() {
@@ -393,13 +394,14 @@ extension StationsViewController: UISearchResultsUpdating {
         // Style the UISearchController
         searchController.searchBar.barTintColor = UIColor.clear
         searchController.searchBar.tintColor = UIColor.white
-        
+
         // Hide the UISearchController
         tableView.setContentOffset(CGPoint(x: 0.0, y: searchController.searchBar.frame.size.height), animated: false)
         
         // Set a black keyborad for UISearchController's TextField
         let searchTextField = searchController.searchBar.value(forKey: "_searchField") as! UITextField
         searchTextField.keyboardAppearance = UIKeyboardAppearance.dark
+        searchTextField.textColor = globalTintColor
     }
 
     func updateSearchResults(for searchController: UISearchController) {
