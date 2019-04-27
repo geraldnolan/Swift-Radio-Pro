@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             stationsViewController = navigationController.viewControllers.first as? StationsViewController
         }
         
-        MSAppCenter.setLogLevel(MSLogLevel.verbose)
+        //MSAppCenter.setLogLevel(MSLogLevel.verbose)
         
         let installId = MSAppCenter.installId()
         print(installId!)

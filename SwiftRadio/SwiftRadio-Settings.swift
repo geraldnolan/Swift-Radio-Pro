@@ -26,22 +26,23 @@ let globalTintColor = UIColor(red: 0, green: 189/255, blue: 233/255, alpha: 1);
 // If this is set to "true", it will use the JSON file in the app
 // Set it to "false" to use the JSON file at the stationDataURL
 
-let useLocalStations = true
-let stationDataURL   = "http://yoururl.com/json/stations.json"
-
+let useLocalStations = false
+let stationDataURL   = "https://api.noltech.co/api/music/stations/86"
+let stationAPI = "http://icecast.noltech.co/api/"
+let appCenterID = "04be9331-03f4-41dc-a327-820fbc330e70"
 //**************************************
 // SEARCH BAR
 //**************************************
 
 // Set this to "true" to enable the search bar
-let searchable = false
+let searchable = true
 
 //**************************************
 // NEXT / PREVIOUS BUTTONS
 //**************************************
 
 // Set this to "false" to show the next/previous player buttons
-let hideNextPreviousButtons = true
+let hideNextPreviousButtons = false
 
 //**************************************
 // AirPlay BUTTON

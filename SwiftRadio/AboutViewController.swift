@@ -11,24 +11,107 @@ import MessageUI
 
 class AboutViewController: UIViewController {
     
+    var searchedStations = [RadioStation]()
     
-    //*****************************************************************
+    var searchController: UISearchController = {
+        return UISearchController(searchResultsController: nil)
+    }()
+    
+    var refreshControl: UIRefreshControl = {
+        return UIRefreshControl()
+    }()
+    
+    var stations = [RadioStation]() {
+        didSet {
+            guard stations != oldValue else { return }
+            self.stationsDidUpdateTest()
+        }
+    } //*****************************************************************
     // MARK: - ViewDidLoad
     //*****************************************************************
-    //@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableView: UITableView!
+    
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        // Register 'Nothing Found' cell xib
+        let cellNib = UINib(nibName: "NothingFoundCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "NothingFound")
+        
+        // Load Data
+        loadStationsFromJSON()
+        
         // Setup TableView
-        //tableView.backgroundColor = .clear
-        //tableView.backgroundView = nil
-        //tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+        tableView.backgroundView = nil
+        tableView.separatorStyle = .none
         
+        // Setup Pull to Refresh
+        setupPullToRefresh()
         
+        // Setup Search Bar
+        setupSearchController()
+        
+         self.tableView.reloadData()
+    }
+    
+    func setupPullToRefresh() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: [.foregroundColor: UIColor.white])
+        refreshControl.backgroundColor = .clear
+        refreshControl.tintColor = .white
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        //tableView.backgroundColor = .black;
+        //tableView.addSubview(refreshControl)
+        tableView.refreshControl = refreshControl;
+    }
+    
+    //*****************************************************************
+    // MARK: - Load Station Data
+    //*****************************************************************
+    
+    func loadStationsFromJSON() {
+        
+        // Turn on network indicator in status bar
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        // Get the Radio Stations
+        DataManager.getStationDataWithSuccess() { (data) in
+            
+            // Turn off network indicator in status bar
+            defer {
+                DispatchQueue.main.async { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
+            }
+            
+            if kDebugLog { print("Stations JSON Found") }
+            
+            guard let data = data, let jsonDictionary = try? JSONDecoder().decode([String: [RadioStation]].self, from: data), let stationsArray = jsonDictionary["station"] else {
+                if kDebugLog { print("JSON Station Loading Error") }
+                return
+            }
+            
+            self.stations = stationsArray
+        }
+    }
+    
+    //*****************************************************************
+    // MARK: - Private helpers
+    //*****************************************************************
+    
+    private func stationsDidUpdateTest() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            
+            print("Load Table")
+            print(self.stations)
+            //guard let currentStation = self.radioPlayer.station else { return }
+            
+            // Reset everything if the new stations list doesn't have the current station
+            //if self.stations.firstIndex(of: currentStation) == nil { self.resetCurrentStation() }
+        }
     }
    
     //*****************************************************************
@@ -56,8 +139,62 @@ class AboutViewController: UIViewController {
         guard let url = URL(string: "http://matthewfecher.com") else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
+    
+    @objc func refresh(sender: AnyObject) {
+        // Pull to Refresh
+        loadStationsFromJSON()
+        
+        // Wait 2 seconds then refresh screen
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.refreshControl.endRefreshing()
+            self.view.setNeedsDisplay()
+        }
+    }
 
   }
+
+//*****************************************************************
+// MARK: - UISearchControllerDelegate / Setup
+//*****************************************************************
+
+extension AboutViewController: UISearchResultsUpdating {
+    
+    func setupSearchController() {
+        guard searchable else { return }
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.sizeToFit()
+        
+        // Add UISearchController to the tableView
+        tableView.tableHeaderView = searchController.searchBar
+        tableView.tableHeaderView?.backgroundColor = UIColor.clear
+        definesPresentationContext = true
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+        searchController.searchBar.searchBarStyle = .minimal
+        
+        // Style the UISearchController
+        searchController.searchBar.barTintColor = UIColor.clear
+        searchController.searchBar.tintColor = UIColor.white
+        
+        // Hide the UISearchController
+        tableView.setContentOffset(CGPoint(x: 0.0, y: searchController.searchBar.frame.size.height), animated: false)
+        
+        // Set a black keyborad for UISearchController's TextField
+        let searchTextField = searchController.searchBar.value(forKey: "_searchField") as! UITextField
+        searchTextField.keyboardAppearance = UIKeyboardAppearance.dark
+        searchTextField.textColor = globalTintColor
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else { return }
+        
+        searchedStations.removeAll(keepingCapacity: false)
+        searchedStations = stations.filter { $0.name.range(of: searchText, options: [.caseInsensitive]) != nil }
+        self.tableView.reloadData()
+    }
+}
 
 //*****************************************************************
 // MARK: - MFMailComposeViewController Delegate
@@ -92,4 +229,68 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
         sendMailErrorAlert.addAction(cancelAction)
         present(sendMailErrorAlert, animated: true, completion: nil)
     }
+ 
 }
+
+//*****************************************************************
+// MARK: - TableViewDataSource
+//*****************************************************************
+
+extension AboutViewController: UITableViewDataSource {
+    
+    @objc(tableView:heightForRowAtIndexPath:)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90.0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if searchController.isActive {
+            return searchedStations.count
+        } else {
+            return stations.isEmpty ? 1 : stations.count
+        }
+ 
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if stations.isEmpty {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NothingFound", for: indexPath)
+            cell.backgroundColor = .clear
+            cell.selectionStyle = .none
+            return cell
+            
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StationCell", for: indexPath) as! StationTableViewCell
+            
+            // alternate background color
+            cell.backgroundColor = (indexPath.row % 2 == 0) ? UIColor.clear : UIColor.black.withAlphaComponent(0.2)
+            
+            let station = stations[indexPath.row]
+            cell.configureStationCell(station: station)
+            
+            return cell
+        }
+    }
+}
+
+//*****************************************************************
+// MARK: - TableViewDelegate
+//*****************************************************************
+
+extension AboutViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "NowPlaying", sender: indexPath)
+    }
+    
+    
+}
+
