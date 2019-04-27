@@ -11,12 +11,24 @@ import MessageUI
 
 class AboutViewController: UIViewController {
     
+    
     //*****************************************************************
     // MARK: - ViewDidLoad
     //*****************************************************************
+    //@IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        // Setup TableView
+        //tableView.backgroundColor = .clear
+        //tableView.backgroundView = nil
+        //tableView.separatorStyle = .none
+        
+        
     }
    
     //*****************************************************************

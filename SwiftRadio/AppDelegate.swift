@@ -50,11 +50,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             stationsViewController = navigationController.viewControllers.first as? StationsViewController
         }
         
+        MSAppCenter.setLogLevel(MSLogLevel.verbose)
+        
+        let installId = MSAppCenter.installId()
+        print(installId!)
         //Add Push Notifications
         MSPush.setDelegate(self as? MSPushDelegate)
         //Push Notifications
-        MSAppCenter.start("04be9331-03f4-41dc-a327-820fbc330e70", withServices: [MSPush.self])
-        
+        MSAppCenter.start(appCenterID, withServices: [MSPush.self])
+
         setupCarPlay()
         
         return true
