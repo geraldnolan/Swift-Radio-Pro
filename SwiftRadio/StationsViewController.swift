@@ -193,10 +193,18 @@ class StationsViewController: UIViewController {
             // User clicked on row, load/reset station
             radioPlayer.station = searchController.isActive ? searchedStations[indexPath.row] : stations[indexPath.row]
             newStation = true
+            
+            if(radioPlayer.station?.azurecastID != 0)
+            {
+                stationsRequestAPI = "http://icecast.bobbaay.com/api/station/" + String(radioPlayer.station!.azurecastID) + "/requests?rowCount=-1"
+            }
+            
         } else {
             // User clicked on Now Playing button
             newStation = false
         }
+        
+        
         
         nowPlayingViewController = nowPlayingVC
         nowPlayingVC.load(station: radioPlayer.station, track: radioPlayer.track, isNewStation: newStation)

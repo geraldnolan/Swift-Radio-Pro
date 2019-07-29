@@ -72,8 +72,8 @@ class NowPlayingViewController: UIViewController {
         
         // Set UI
         albumImageView.image = currentTrack.artworkImage
-        stationDescLabel.text = currentStation.desc
-        stationDescLabel.isHidden = currentTrack.artworkLoaded
+        //stationDescLabel.text = currentStation.desc
+        //stationDescLabel.isHidden = currentTrack.artworkLoaded
         
         // Check for station change
         newStation ? stationDidChange() : playerStateDidChange(radioPlayer.state, animate: false)
@@ -132,6 +132,7 @@ class NowPlayingViewController: UIViewController {
         } else {
             let airPlayButton = MPVolumeView(frame: airPlayView.bounds)
             airPlayButton.showsVolumeSlider = false
+            airPlayButton.showsRouteButton = true
             airPlayView.backgroundColor = .clear
             airPlayView.addSubview(airPlayButton)
         }
@@ -140,8 +141,8 @@ class NowPlayingViewController: UIViewController {
     func stationDidChange() {
         radioPlayer.radioURL = URL(string: currentStation.streamURL)
         albumImageView.image = currentTrack.artworkImage
-        stationDescLabel.text = currentStation.desc
-        stationDescLabel.isHidden = currentTrack.artworkLoaded
+        //stationDescLabel.text = currentStation.desc
+        //stationDescLabel.isHidden = currentTrack.artworkLoaded
         title = currentStation.name
     }
     
@@ -203,9 +204,9 @@ class NowPlayingViewController: UIViewController {
             albumImageView.animation = "wobble"
             albumImageView.duration = 2
             albumImageView.animate()
-            stationDescLabel.isHidden = true
+            //stationDescLabel.isHidden = true
         } else {
-            stationDescLabel.isHidden = false
+            //stationDescLabel.isHidden = false
         }
         
         // Force app to update display

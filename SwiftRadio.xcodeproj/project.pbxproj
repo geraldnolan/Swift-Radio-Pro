@@ -37,6 +37,8 @@
 		5F22BA551F72AD5A00CB5911 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA3A1F72AD5800CB5911 /* AutoTextView.swift */; };
 		5F22BA561F72AD5A00CB5911 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA3B1F72AD5900CB5911 /* DesignableView.swift */; };
 		5FDEE0221F72FF980064333C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */; };
+		7327282522747A2B00232A70 /* SongRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327282422747A2B00232A70 /* SongRequests.swift */; };
+		7327282722747C7400232A70 /* SongRequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327282622747C7400232A70 /* SongRequestsTableViewCell.swift */; };
 		81AD229B21646DEA002ADFDD /* FRadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD229821646DEA002ADFDD /* FRadioPlayer.swift */; };
 		81AD229C21646DEA002ADFDD /* FRadioAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD229921646DEA002ADFDD /* FRadioAPI.swift */; };
 		81AD229D21646DEA002ADFDD /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD229A21646DEA002ADFDD /* Reachability.swift */; };
@@ -113,6 +115,8 @@
 		5F22BA3B1F72AD5900CB5911 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61687AAA7BD4252EAB68D047 /* Pods-SwiftRadioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadioUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftRadioUITests/Pods-SwiftRadioUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7327282422747A2B00232A70 /* SongRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequests.swift; sourceTree = "<group>"; };
+		7327282622747C7400232A70 /* SongRequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestsTableViewCell.swift; sourceTree = "<group>"; };
 		7F712F254C15653ACE12F367 /* Pods-SwiftRadio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadio.release.xcconfig"; path = "Target Support Files/Pods-SwiftRadio/Pods-SwiftRadio.release.xcconfig"; sourceTree = "<group>"; };
 		81AD229821646DEA002ADFDD /* FRadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioPlayer.swift; sourceTree = "<group>"; };
 		81AD229921646DEA002ADFDD /* FRadioAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioAPI.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 			children = (
 				945DB3C41AD5A6E200495EBB /* NothingFoundCell.xib */,
 				94D30EA61AD07A880024FE96 /* StationTableViewCell.swift */,
+				7327282622747C7400232A70 /* SongRequestsTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 			children = (
 				94AC70AD1AD05C6200652982 /* RadioStation.swift */,
 				94D260971B45E8B800DE671C /* Track.swift */,
+				7327282422747A2B00232A70 /* SongRequests.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -579,11 +585,13 @@
 				9409E11C1ABF6FEA00312E2B /* AppDelegate.swift in Sources */,
 				5F22BA4D1F72AD5A00CB5911 /* DesignableImageView.swift in Sources */,
 				5F22BA491F72AD5A00CB5911 /* AsyncImageView.swift in Sources */,
+				7327282722747C7400232A70 /* SongRequestsTableViewCell.swift in Sources */,
 				5F22BA541F72AD5A00CB5911 /* SpringView.swift in Sources */,
 				CE108E7622060E4B003CDF06 /* CarPlayPlaylist.swift in Sources */,
 				94D260961B45E3FA00DE671C /* AnimationFrames.swift in Sources */,
 				5F22BA461F72AD5A00CB5911 /* AsyncButton.swift in Sources */,
 				942A3F371AE43DF80011396E /* StationsViewController.swift in Sources */,
+				7327282522747A2B00232A70 /* SongRequests.swift in Sources */,
 				81AD229B21646DEA002ADFDD /* FRadioPlayer.swift in Sources */,
 				5F22BA501F72AD5A00CB5911 /* Spring.swift in Sources */,
 				81AD229C21646DEA002ADFDD /* FRadioAPI.swift in Sources */,

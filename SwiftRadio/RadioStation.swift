@@ -19,13 +19,15 @@ struct RadioStation: Codable {
     var imageURL: String
     var desc: String
     var longDesc: String
+    var azurecastID: Int
     
-    init(name: String, streamURL: String, imageURL: String, desc: String, longDesc: String = "") {
+    init(name: String, streamURL: String, imageURL: String, desc: String, longDesc: String = "", azurecastID: Int = 0) {
         self.name = name
         self.streamURL = streamURL
         self.imageURL = imageURL
         self.desc = desc
         self.longDesc = longDesc
+        self.azurecastID = azurecastID
     }
 }
 

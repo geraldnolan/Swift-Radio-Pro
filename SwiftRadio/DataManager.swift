@@ -19,6 +19,7 @@ struct DataManager {
         DispatchQueue.global(qos: .userInitiated).async {
             if useLocalStations {
                 getDataFromFileWithSuccess() { data in
+                   
                     success(data)
                 }
             } else {
@@ -29,9 +30,74 @@ struct DataManager {
                 }
                 
                 loadDataFromURL(url: stationDataURL) { data, error in
+                    let json = String(data: data!, encoding: String.Encoding.utf8)
+                    print(json!)
                     success(data)
                 }
             }
+        }
+    }
+    
+    static func getRequestDataWithSuccess(success: @escaping ((_ metaData: Data?) -> Void)) {
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            guard let stationRequestAPI = URL(string: stationsRequestAPI) else {
+                if kDebugLog { print("stationDataURL not a valid URL") }
+                success(nil)
+                return
+            }
+            
+            loadDataFromURL(url: stationRequestAPI) { data, error in
+                let json = String(data: data!, encoding: String.Encoding.utf8)
+                print(json!)
+                success(data)
+            }
+
+        }
+    }
+    
+    /// This function returns a *hello* string for a given `subject`.
+    ///
+    /// - Warning: The returned string is not localized.
+    ///
+    /// Usage:
+    ///
+    ///     println(hello("Markdown")) // Hello, Markdown!
+    ///
+    /// - Parameter subject: The subject to be welcomed.
+    ///
+    /// - Returns: A hello string to the `subject`.
+    static func postRequestDataWithSuccess(url: URL, success: @escaping ((_ metaData: Data?) -> Void)) {
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+
+            let headers = [
+                "x-api-key": stationAPIXKey,
+                "cache-control": "no-cache",
+            ]
+            
+            let request = NSMutableURLRequest(url: url,
+                                              cachePolicy: .useProtocolCachePolicy,
+                                              timeoutInterval: 10.0)
+            request.httpMethod = "POST"
+            request.allHTTPHeaderFields = headers
+            
+            let session = URLSession.shared
+            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+                if (error != nil) {
+                    print(error!)
+                } else {
+                    //let httpResponse = response as? HTTPURLResponse
+                    let json = String(data: data!, encoding: String.Encoding.utf8)
+                    print(json!)
+                    //print(httpResponse)
+                    success(data)
+                }
+            })
+            
+            dataTask.resume()
+
         }
     }
     
@@ -60,11 +126,17 @@ struct DataManager {
     
     static func loadDataFromURL(url: URL, completion: @escaping (_ data: Data?, _ error: Error?) -> Void) {
         
+        let headers = [
+            "x-api-key": "1219751622122bd3:2350fbd6db11edfa37d7d63938189140",
+            "cache-control": "no-cache"
+        ]
+        
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.allowsCellularAccess = true
         sessionConfig.timeoutIntervalForRequest = 15
         sessionConfig.timeoutIntervalForResource = 30
         sessionConfig.httpMaximumConnectionsPerHost = 1
+        sessionConfig.httpAdditionalHeaders = headers
         
         let session = URLSession(configuration: sessionConfig)
         

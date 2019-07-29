@@ -11,7 +11,7 @@ import MessageUI
 
 class AboutViewController: UIViewController {
     
-    var searchedStations = [RadioStation]()
+    var searchedStations = [Row]()
     
     var searchController: UISearchController = {
         return UISearchController(searchResultsController: nil)
@@ -21,7 +21,7 @@ class AboutViewController: UIViewController {
         return UIRefreshControl()
     }()
     
-    var stations = [RadioStation]() {
+    var stations = [Row]() {
         didSet {
             guard stations != oldValue else { return }
             self.stationsDidUpdateTest()
@@ -78,22 +78,31 @@ class AboutViewController: UIViewController {
         // Turn on network indicator in status bar
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
+        //stationsRequestAPI = "http://icecast.bobbaay.com/api/station/2/requests?rowCount=-1"
+        
         // Get the Radio Stations
-        DataManager.getStationDataWithSuccess() { (data) in
+        DataManager.getRequestDataWithSuccess() { (data) in
             
             // Turn off network indicator in status bar
             defer {
                 DispatchQueue.main.async { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
             }
             
-            if kDebugLog { print("Stations JSON Found") }
+            if kDebugLog { print("Request Stations JSON Found") }
             
-            guard let data = data, let jsonDictionary = try? JSONDecoder().decode([String: [RadioStation]].self, from: data), let stationsArray = jsonDictionary["station"] else {
+            //let jsonDictionary = try? JSONDecoder().decode([String: [SongRequest]].self, from: data!)
+            
+            let songRequests = try? JSONDecoder().decode(SongRequest.self, from: data!)
+
+            
+            print(songRequests)
+            //let stationsArray = jsonDictionary?["rows"]
+            /*guard let data = data, let jsonDictionary = try? JSONDecoder().decode(SongRequest.self, from: data), let stationsArray = jsonDictionary!.rows else {
                 if kDebugLog { print("JSON Station Loading Error") }
                 return
-            }
+            }*/
             
-            self.stations = stationsArray
+             self.stations = songRequests!.rows
         }
     }
     
@@ -191,7 +200,11 @@ extension AboutViewController: UISearchResultsUpdating {
         guard let searchText = searchController.searchBar.text else { return }
         
         searchedStations.removeAll(keepingCapacity: false)
-        searchedStations = stations.filter { $0.name.range(of: searchText, options: [.caseInsensitive]) != nil }
+
+        //searchedStations = stations.filter { $0.songArtist.contains(searchText) }
+        searchedStations = stations.filter { ($0.songArtist.range(of: searchText, options: [.caseInsensitive]) != nil) ||  $0.songTitle.range(of: searchText, options: [.caseInsensitive]) != nil }
+        //searchedStations = stations.filter { _ in favoriteNames.contains(searchText) }
+
         self.tableView.reloadData()
     }
 }
@@ -266,13 +279,14 @@ extension AboutViewController: UITableViewDataSource {
             return cell
             
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "StationCell", for: indexPath) as! StationTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StationCell", for: indexPath) as! SongRequestsTableViewCell
             
             // alternate background color
             cell.backgroundColor = (indexPath.row % 2 == 0) ? UIColor.clear : UIColor.black.withAlphaComponent(0.2)
             
-            let station = stations[indexPath.row]
-            cell.configureStationCell(station: station)
+            //let songRequest = stations[indexPath.row]
+            let songRequest = searchController.isActive ? searchedStations[indexPath.row] : stations[indexPath.row]
+            cell.configureSongRequestCell(songRequest: songRequest)
             
             return cell
         }
@@ -287,8 +301,40 @@ extension AboutViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "NowPlaying", sender: indexPath)
+        //tableView.deselectRow(at: indexPath, animated: true)
+        //performSegue(withIdentifier: "NowPlaying", sender: indexPath)
+        
+        let songRequest = stations[indexPath.row]
+        
+        // Get the Radio Stations
+        DataManager.postRequestDataWithSuccess(url: NSURL(string: "http://icecast.bobbaay.com/" + songRequest.requestURL)! as URL) { (data) in
+            
+            // Turn off network indicator in status bar
+            defer {
+                DispatchQueue.main.async { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
+            }
+            
+            if kDebugLog { print("Request Made") }
+            
+            let json = String(data: data!, encoding: String.Encoding.utf8)
+            print(json!)
+            
+            let message = json!.replacingOccurrences(of: "\"", with: "")
+            
+            //Show Message
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
+            }
+        }
+        
+       
+        
+        
+        
     }
     
     
