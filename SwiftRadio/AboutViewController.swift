@@ -304,7 +304,7 @@ extension AboutViewController: UITableViewDelegate {
         //tableView.deselectRow(at: indexPath, animated: true)
         //performSegue(withIdentifier: "NowPlaying", sender: indexPath)
         
-        let songRequest = stations[indexPath.row]
+        let songRequest = searchController.isActive ? searchedStations[indexPath.row] : stations[indexPath.row]
         
         // Get the Radio Stations
         DataManager.postRequestDataWithSuccess(url: NSURL(string: "http://icecast.bobbaay.com/" + songRequest.requestURL)! as URL) { (data) in

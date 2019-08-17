@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SongRequestsTableViewCell: UITableViewCell {
     
@@ -35,11 +36,12 @@ class SongRequestsTableViewCell: UITableViewCell {
         
         if imageURL.contains("http") {
             
-            if let url = URL(string: songRequest.songArt) {
+            /*if let url = URL(string: songRequest.songArt) {
                 stationImageView.loadImageWithURL(url: url) { (image) in
                     // station image loaded
                 }
-            }
+            }*/
+            stationImageView.sd_setImage(with: URL(string: songRequest.songArt))
             
         } else if imageURL != "" {
             stationImageView.image = UIImage(named: imageURL as String)

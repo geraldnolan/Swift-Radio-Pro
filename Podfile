@@ -8,11 +8,12 @@ target 'SwiftRadio' do
   # Pods for SwiftRadio
   pod 'AppCenter'
   pod 'AppCenter/Push'
-
+  pod 'SDWebImage'
   
   target 'SwiftRadioUITests' do
     inherit! :search_paths
     # Pods for testing
   end
-
+  
+ 
 end

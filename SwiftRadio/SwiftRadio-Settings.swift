@@ -35,7 +35,7 @@ let useLocalStations = false
 
 let stationDataURL   = "https://api.noltech.co/api/music/stations/86"
 let stationAPI = "http://icecast.noltech.co/api/"
-let stationAPIXKey = "1219751622122bd3:2350fbd6db11edfa37d7d63938189140"
+let stationAPIXKey = "599ccbedee6259ea:c7883305de95d7c3c3cde453bc9b5a6f"
 var stationsRequestAPI = "http://icecast.bobbaay.com/api/station/1/requests?rowCount=-1"
 
 //**************************************

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class StationTableViewCell: UITableViewCell {
 
@@ -33,18 +34,25 @@ class StationTableViewCell: UITableViewCell {
         
         let imageURL = station.imageURL as NSString
         
-            if imageURL.contains("http") {
+            /*if imageURL.contains("http") {
             
             if let url = URL(string: station.imageURL) {
                 stationImageView.loadImageWithURL(url: url) { (image) in
                     // station image loaded
                 }
-            }
+            }*/
                 
-            } else if imageURL != "" {
-                stationImageView.image = UIImage(named: imageURL as String)
+            if imageURL.contains("http") {
+                //stationImageView.image = UIImage(named: imageURL as String)
+                stationImageView.sd_setImage(with: URL(string: station.imageURL))
+                
            
-            } else {
+            }
+            else if (imageURL != "")
+            {
+                stationImageView.image = UIImage(named: imageURL as String)
+            }
+            else {
                 stationImageView.image = UIImage(named: "stationImage")
             }
         
