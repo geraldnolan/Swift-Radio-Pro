@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W5g-6W-fPV">
     <device id="appleTV" orientation="landscape">
-        <adaptation id="light"/>
+        <adaptation id="dark"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
@@ -18,39 +18,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zQj-QA-bAe">
-                            <size key="itemSize" width="606" height="534"/>
+                            <size key="itemSize" width="892" height="900"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StationCell" id="F3h-gL-8EF" customClass="StationCollectionViewCell" customModule="SwiftRadioTV" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="606" height="534"/>
+                                <rect key="frame" x="0.0" y="90" width="892" height="900"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="606" height="534"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="892" height="900"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="station-therockfm" translatesAutoresizingMaskIntoConstraints="NO" id="hOT-yi-t1V">
-                                            <rect key="frame" x="0.0" y="0.0" width="606" height="398"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="df3-5b-L3H" userLabel="Labels Stack View">
+                                            <rect key="frame" x="245" y="654" width="402" height="162"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNl-Fb-Gd0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="402" height="69"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station Name Desc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOM-co-2hg">
+                                                    <rect key="frame" x="0.0" y="72" width="402" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="0rQ-NZ-dPp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="162" id="gkY-8Q-Avf"/>
+                                            </constraints>
+                                        </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="station-therockfm" translatesAutoresizingMaskIntoConstraints="NO" id="hOT-yi-t1V">
+                                            <rect key="frame" x="43" y="118.99999999999997" width="806" height="467.00000000000006"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="467" id="Aqe-Bi-cxB"/>
+                                                <constraint firstAttribute="width" secondItem="hOT-yi-t1V" secondAttribute="height" multiplier="805:466" id="MWQ-wF-JfF"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNl-Fb-Gd0">
-                                            <rect key="frame" x="49" y="406" width="522" height="46"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Station Name Desc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOM-co-2hg">
-                                            <rect key="frame" x="139" y="454" width="328" height="46"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="hOT-yi-t1V" firstAttribute="centerX" secondItem="F3h-gL-8EF" secondAttribute="centerX" id="0kO-Or-7eM"/>
+                                    <constraint firstItem="df3-5b-L3H" firstAttribute="centerX" secondItem="F3h-gL-8EF" secondAttribute="centerX" id="g1y-e5-tWn"/>
+                                    <constraint firstItem="hOT-yi-t1V" firstAttribute="top" secondItem="F3h-gL-8EF" secondAttribute="topMargin" constant="51" id="hhf-Rg-zWg"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="df3-5b-L3H" secondAttribute="bottom" constant="76" id="uMq-ox-mzn"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="stationDescLabel" destination="QOM-co-2hg" id="Qkp-xk-JLQ"/>
                                     <outlet property="stationImageView" destination="hOT-yi-t1V" id="uuH-6P-e55"/>
@@ -69,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="69" y="-2618"/>
         </scene>
-        <!--Now PlayingTV View Controller-->
+        <!--SubPop Records-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NowPlayingTVViewController" customModule="SwiftRadioTV" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,23 +99,170 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75g-SC-cyA">
-                                <rect key="frame" x="620" y="448" width="73" height="46"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="uXf-Wr-UiK" userLabel="Background Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1080" id="6CI-FN-HS0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="obn-8m-awZ" userLabel="AlbumArt" customClass="SpringImageView" customModule="SwiftRadioTV" customModuleProvider="target">
+                                <rect key="frame" x="587" y="78" width="728" height="564"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="564" id="MUa-h1-VfC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIj-4c-kRh" userLabel="Company-Button">
+                                <rect key="frame" x="102" y="976" width="90" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="DNd-sr-nvX"/>
+                                    <constraint firstAttribute="width" constant="90" id="HL9-Jq-osw"/>
+                                </constraints>
+                                <state key="normal" image="logo">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ub6-am-LP5">
+                                <rect key="frame" x="1760" y="981" width="58" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BY-Uw-fd7" userLabel="Share Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="26" id="OdL-jY-2i8"/>
+                                            <constraint firstAttribute="height" constant="26" id="WCg-3H-2ht"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="share">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfv-H0-2Po" userLabel="InformationButton">
+                                        <rect key="frame" x="36" y="4" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="IbM-ag-eBx"/>
+                                            <constraint firstAttribute="width" constant="22" id="LtX-vH-4q5"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8xJ-4F-WCE" userLabel="Labels Stack View">
+                                <rect key="frame" x="773" y="687" width="374" height="157"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-ZG-rx5" userLabel="Song Label" customClass="SpringLabel" customModule="SwiftRadioTV" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="91"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v3l-q6-g0h" userLabel="Artist Label">
+                                        <rect key="frame" x="63" y="99" width="249" height="58"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="HdU-Sh-f4p"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3J-VY-dfS">
+                                <rect key="frame" x="863" y="921" width="195" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="y5b-2A-HXT" kind="show" id="peT-Jw-2iA"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                        <constraints>
+                            <constraint firstItem="uXf-Wr-UiK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3uZ-jG-vgy"/>
+                            <constraint firstItem="8xJ-4F-WCE" firstAttribute="top" secondItem="obn-8m-awZ" secondAttribute="bottom" constant="45" id="4VG-Hz-eRQ"/>
+                            <constraint firstItem="GIj-4c-kRh" firstAttribute="leading" secondItem="aXI-gd-81R" secondAttribute="leading" constant="12" id="ChK-Oh-4sr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="obn-8m-awZ" secondAttribute="bottom" constant="378" id="Chi-8U-Qdm"/>
+                            <constraint firstAttribute="trailing" secondItem="uXf-Wr-UiK" secondAttribute="trailing" id="Etf-5M-muV"/>
+                            <constraint firstItem="obn-8m-awZ" firstAttribute="leading" secondItem="aXI-gd-81R" secondAttribute="leading" constant="497" id="Foa-PH-zn4"/>
+                            <constraint firstItem="aXI-gd-81R" firstAttribute="trailing" secondItem="obn-8m-awZ" secondAttribute="trailing" constant="515" id="NGW-mD-TVM"/>
+                            <constraint firstItem="8xJ-4F-WCE" firstAttribute="leading" secondItem="aXI-gd-81R" secondAttribute="leading" constant="683" id="NNk-2Z-0Xq"/>
+                            <constraint firstItem="aXI-gd-81R" firstAttribute="trailing" secondItem="8xJ-4F-WCE" secondAttribute="trailing" constant="683" id="QLi-08-btN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GIj-4c-kRh" secondAttribute="bottom" constant="8" id="WVY-TT-7oq"/>
+                            <constraint firstItem="obn-8m-awZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="WYE-Lh-p1H"/>
+                            <constraint firstAttribute="bottom" secondItem="uXf-Wr-UiK" secondAttribute="bottom" id="aZq-j6-14p"/>
+                            <constraint firstItem="uXf-Wr-UiK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="m4z-I6-DUz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aXI-gd-81R"/>
                     </view>
+                    <navigationItem key="navigationItem" title="SubPop Records" id="M1Z-0o-hNV" userLabel="Station Title"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="albumImageView" destination="obn-8m-awZ" id="EqI-Sn-oRR"/>
+                        <outlet property="artistLabel" destination="v3l-q6-g0h" id="s0B-6Y-MWu"/>
+                        <outlet property="songLabel" destination="KC8-ZG-rx5" id="tNh-3K-qWW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3413" y="-2618"/>
         </scene>
+        <!--Color Switch View Controller-->
+        <scene sceneID="Mtg-Qq-tZ0">
+            <objects>
+                <viewController id="y5b-2A-HXT" customClass="ColorSwitchViewController" customModule="SwiftRadioTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eye-ch-XV5"/>
+                        <viewControllerLayoutGuide type="bottom" id="82A-ZA-K5Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rR8-FE-8bB">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mt8-xT-9pR">
+                                <rect key="frame" x="284" y="263" width="147" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Red"/>
+                                <connections>
+                                    <action selector="redTappy:" destination="y5b-2A-HXT" eventType="primaryActionTriggered" id="Bml-pz-EFF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waL-DG-RHY" userLabel="Connections Label">
+                                <rect key="frame" x="311" y="60" width="751" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNi-QI-NrO">
+                                <rect key="frame" x="212" y="159" width="190" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Yellow"/>
+                                <connections>
+                                    <action selector="yellowTappy:" destination="y5b-2A-HXT" eventType="primaryActionTriggered" id="wO1-4q-4n8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WDS-w9-cL7"/>
+                    </view>
+                    <connections>
+                        <outlet property="connectionLabel" destination="waL-DG-RHY" id="0Bm-bF-ekm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FH2-5b-BT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3446" y="-978"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="background" width="320" height="568"/>
+        <image name="logo" width="180" height="71"/>
+        <image name="share" width="32" height="32"/>
         <image name="station-therockfm" width="350" height="206"/>
     </resources>
 </document>

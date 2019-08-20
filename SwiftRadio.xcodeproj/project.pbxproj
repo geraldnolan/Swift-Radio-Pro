@@ -37,13 +37,18 @@
 		5F22BA551F72AD5A00CB5911 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA3A1F72AD5800CB5911 /* AutoTextView.swift */; };
 		5F22BA561F72AD5A00CB5911 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA3B1F72AD5900CB5911 /* DesignableView.swift */; };
 		5FDEE0221F72FF980064333C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */; };
+		73014863230ABAC500D5C046 /* SongRequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327282622747C7400232A70 /* SongRequestsTableViewCell.swift */; };
+		73014864230ABB3200D5C046 /* UIImage+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9761B1B1A8F3200F52B1E /* UIImage+DropShadow.swift */; };
+		73014867230B656A00D5C046 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73014866230B656A00D5C046 /* ColorService.swift */; };
+		73014869230B65D300D5C046 /* ColorSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73014868230B65D200D5C046 /* ColorSwitchViewController.swift */; };
 		7327282522747A2B00232A70 /* SongRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327282422747A2B00232A70 /* SongRequests.swift */; };
 		7327282722747C7400232A70 /* SongRequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327282622747C7400232A70 /* SongRequestsTableViewCell.swift */; };
 		733798FE23080BE700450180 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA8FDB42000614600050F77 /* RadioPlayer.swift */; };
 		733798FF2308140D00450180 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949E5EAF1ACB340200AB6280 /* UIImageView+Download.swift */; };
 		73379900230820D100450180 /* AnimationFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260951B45E3FA00DE671C /* AnimationFrames.swift */; };
+		7337990123086C1400450180 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1251ABF6FEA00312E2B /* Images.xcassets */; };
 		7356BF4823024AD90042E541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7356BF4723024AD90042E541 /* AppDelegate.swift */; };
-		7356BF4A23024AD90042E541 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7356BF4923024AD90042E541 /* NowPlayingViewController.swift */; };
+		7356BF4A23024AD90042E541 /* NowPlayingTVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7356BF4923024AD90042E541 /* NowPlayingTVViewController.swift */; };
 		7356BF4D23024AD90042E541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7356BF4B23024AD90042E541 /* Main.storyboard */; };
 		7356BF4F23024ADB0042E541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7356BF4E23024ADB0042E541 /* Assets.xcassets */; };
 		7366C6DF2306304400833A1D /* StationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366C6DE2306304400833A1D /* StationCollectionViewCell.swift */; };
@@ -102,6 +107,7 @@
 		94D260981B45E8B800DE671C /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260971B45E8B800DE671C /* Track.swift */; };
 		94D30EA71AD07A880024FE96 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D30EA61AD07A880024FE96 /* StationTableViewCell.swift */; };
 		94E9761C1B1A8F3200F52B1E /* UIImage+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9761B1B1A8F3200F52B1E /* UIImage+DropShadow.swift */; };
+		9C5DD92C019D19BABD5C4407 /* Pods_SwiftRadioTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43152EB3E771CCDC3B090AD4 /* Pods_SwiftRadioTV.framework */; };
 		CAA8FDB52000614600050F77 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA8FDB42000614600050F77 /* RadioPlayer.swift */; };
 		CE108E7322060C3F003CDF06 /* AppDelegate+CarPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE108E7222060C3F003CDF06 /* AppDelegate+CarPlay.swift */; };
 		CE108E7622060E4B003CDF06 /* CarPlayPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE108E7522060E4B003CDF06 /* CarPlayPlaylist.swift */; };
@@ -121,10 +127,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FFDF6AA7515366B74955C7E /* Pods-SwiftRadioTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadioTV.release.xcconfig"; path = "Target Support Files/Pods-SwiftRadioTV/Pods-SwiftRadioTV.release.xcconfig"; sourceTree = "<group>"; };
 		2C5545BA1C1124DE00728469 /* SwiftRadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRadioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRadioUITests.swift; sourceTree = "<group>"; };
 		2C5545BE1C1124DE00728469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32881C9443DC40929DC0A656 /* Pods-SwiftRadio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadio.debug.xcconfig"; path = "Target Support Files/Pods-SwiftRadio/Pods-SwiftRadio.debug.xcconfig"; sourceTree = "<group>"; };
+		43152EB3E771CCDC3B090AD4 /* Pods_SwiftRadioTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRadioTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB2F4900DC5762BC6B9E824 /* Pods_SwiftRadioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRadioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F22BA1E1F72AD3700CB5911 /* SpringLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
 		5F22BA1F1F72AD3900CB5911 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -158,11 +166,13 @@
 		5F22BA3B1F72AD5900CB5911 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61687AAA7BD4252EAB68D047 /* Pods-SwiftRadioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadioUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftRadioUITests/Pods-SwiftRadioUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		73014866230B656A00D5C046 /* ColorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
+		73014868230B65D200D5C046 /* ColorSwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSwitchViewController.swift; sourceTree = "<group>"; };
 		7327282422747A2B00232A70 /* SongRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequests.swift; sourceTree = "<group>"; };
 		7327282622747C7400232A70 /* SongRequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestsTableViewCell.swift; sourceTree = "<group>"; };
 		7356BF4523024AD90042E541 /* SwiftRadioTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRadioTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7356BF4723024AD90042E541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7356BF4923024AD90042E541 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
+		7356BF4923024AD90042E541 /* NowPlayingTVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTVViewController.swift; sourceTree = "<group>"; };
 		7356BF4C23024AD90042E541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7356BF4E23024ADB0042E541 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7356BF5023024ADB0042E541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +210,7 @@
 		CE108E7922064B24003CDF06 /* StationsViewController+CarPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StationsViewController+CarPlay.swift"; sourceTree = "<group>"; };
 		CF72ACE621F714D000461EED /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DBA47F48757E1DCC49A1B91B /* Pods_SwiftRadio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRadio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D2A553B840E4F6F6DBCD95 /* Pods-SwiftRadioTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadioTV.debug.xcconfig"; path = "Target Support Files/Pods-SwiftRadioTV/Pods-SwiftRadioTV.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5DD92C019D19BABD5C4407 /* Pods_SwiftRadioTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +257,8 @@
 				7F712F254C15653ACE12F367 /* Pods-SwiftRadio.release.xcconfig */,
 				61687AAA7BD4252EAB68D047 /* Pods-SwiftRadioUITests.debug.xcconfig */,
 				8E3F4E303BBEED8B43033194 /* Pods-SwiftRadioUITests.release.xcconfig */,
+				E2D2A553B840E4F6F6DBCD95 /* Pods-SwiftRadioTV.debug.xcconfig */,
+				0FFDF6AA7515366B74955C7E /* Pods-SwiftRadioTV.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -295,9 +309,18 @@
 			path = Spring;
 			sourceTree = "<group>";
 		};
+		73014865230B653300D5C046 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				73014866230B656A00D5C046 /* ColorService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		7356BF4623024AD90042E541 /* SwiftRadioTV */ = {
 			isa = PBXGroup;
 			children = (
+				73014865230B653300D5C046 /* Service */,
 				7366C6EB23063B8E00833A1D /* ViewControllers */,
 				7366C6E0230630F600833A1D /* Model */,
 				7366C6DD2306300600833A1D /* Cells */,
@@ -327,7 +350,8 @@
 		7366C6EB23063B8E00833A1D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7356BF4923024AD90042E541 /* NowPlayingViewController.swift */,
+				73014868230B65D200D5C046 /* ColorSwitchViewController.swift */,
+				7356BF4923024AD90042E541 /* NowPlayingTVViewController.swift */,
 				7366C6E923063AB800833A1D /* StationsCollectionViewController.swift */,
 			);
 			path = ViewControllers;
@@ -460,6 +484,7 @@
 				DBA47F48757E1DCC49A1B91B /* Pods_SwiftRadio.framework */,
 				4DB2F4900DC5762BC6B9E824 /* Pods_SwiftRadioUITests.framework */,
 				8ED4B25BD0BCCFD1009FFC72 /* Pods_SwiftRadio_SwiftRadioTV.framework */,
+				43152EB3E771CCDC3B090AD4 /* Pods_SwiftRadioTV.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -500,9 +525,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7356BF5323024ADB0042E541 /* Build configuration list for PBXNativeTarget "SwiftRadioTV" */;
 			buildPhases = (
+				5F825060500E33DB6CB8544D /* [CP] Check Pods Manifest.lock */,
 				7356BF4123024AD90042E541 /* Sources */,
 				7356BF4223024AD90042E541 /* Frameworks */,
 				7356BF4323024AD90042E541 /* Resources */,
+				89F12BC828031CE2D347D0F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -601,6 +628,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7337990123086C1400450180 /* Images.xcassets in Resources */,
 				7356BF4F23024ADB0042E541 /* Assets.xcassets in Resources */,
 				7356BF4D23024AD90042E541 /* Main.storyboard in Resources */,
 			);
@@ -643,6 +671,50 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5F825060500E33DB6CB8544D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftRadioTV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89F12BC828031CE2D347D0F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftRadioTV/Pods-SwiftRadioTV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage-tvOS/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftRadioTV/Pods-SwiftRadioTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		92BA9647ACFC89B020D2BA88 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -652,7 +724,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftRadio/Pods-SwiftRadio-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage-iOS/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -705,7 +777,7 @@
 				733798FE23080BE700450180 /* RadioPlayer.swift in Sources */,
 				7366C6F323063C1F00833A1D /* DesignableButton.swift in Sources */,
 				7366C70223063C5A00833A1D /* SpringImageView.swift in Sources */,
-				7356BF4A23024AD90042E541 /* NowPlayingViewController.swift in Sources */,
+				7356BF4A23024AD90042E541 /* NowPlayingTVViewController.swift in Sources */,
 				7366C70823063C6F00833A1D /* TransitionZoom.swift in Sources */,
 				7366C6EC23063BFD00833A1D /* FRadioAPI.swift in Sources */,
 				7366C6FF23063C4F00833A1D /* Spring.swift in Sources */,
@@ -722,6 +794,7 @@
 				7356BF4823024AD90042E541 /* AppDelegate.swift in Sources */,
 				7366C6E5230637B500833A1D /* RadioStation.swift in Sources */,
 				7366C6F723063C2B00833A1D /* DesignableTextField.swift in Sources */,
+				73014864230ABB3200D5C046 /* UIImage+DropShadow.swift in Sources */,
 				7366C6FC23063C3B00833A1D /* LoadingView.swift in Sources */,
 				7366C6DF2306304400833A1D /* StationCollectionViewCell.swift in Sources */,
 				7366C6F223063C1B00833A1D /* BlurView.swift in Sources */,
@@ -738,9 +811,12 @@
 				7366C70623063C6800833A1D /* SpringView.swift in Sources */,
 				7366C70323063C5F00833A1D /* SpringLabel.swift in Sources */,
 				7366C6E6230637BA00833A1D /* Track.swift in Sources */,
+				73014863230ABAC500D5C046 /* SongRequestsTableViewCell.swift in Sources */,
+				73014869230B65D300D5C046 /* ColorSwitchViewController.swift in Sources */,
 				7366C6EF23063C0900833A1D /* AsyncButton.swift in Sources */,
 				7366C70023063C5300833A1D /* SpringAnimation.swift in Sources */,
 				7366C6F423063C2200833A1D /* DesignableImageView.swift in Sources */,
+				73014867230B656A00D5C046 /* ColorService.swift in Sources */,
 				7366C6F023063C1500833A1D /* AsyncImageView.swift in Sources */,
 				7366C70723063C6C00833A1D /* TransitionManager.swift in Sources */,
 			);
@@ -861,6 +937,7 @@
 		};
 		7356BF5123024ADB0042E541 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2D2A553B840E4F6F6DBCD95 /* Pods-SwiftRadioTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -890,6 +967,7 @@
 		};
 		7356BF5223024ADB0042E541 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FFDF6AA7515366B74955C7E /* Pods-SwiftRadioTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

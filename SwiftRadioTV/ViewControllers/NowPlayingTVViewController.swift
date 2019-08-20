@@ -15,7 +15,7 @@ import AVKit
 // NowPlayingViewControllerDelegate
 //*****************************************************************
 
-protocol NowPlayingViewControllerDelegate: class {
+protocol NowPlayingTVViewControllerDelegate: class {
     func didPressPlayingButton()
     func didPressStopButton()
     func didPressNextButton()
@@ -28,16 +28,15 @@ protocol NowPlayingViewControllerDelegate: class {
 
 class NowPlayingTVViewController: UIViewController {
     
-    weak var delegate: NowPlayingViewControllerDelegate?
+    weak var delegate: NowPlayingTVViewControllerDelegate?
     
     // MARK: - IB UI
     
-    @IBOutlet weak var albumHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var albumImageView: SpringImageView!
+    @IBOutlet weak var albumHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var playingButton: UIButton!
     @IBOutlet weak var songLabel: SpringLabel!
-    @IBOutlet weak var stationDescLabel: UILabel!
     @IBOutlet weak var volumeParentView: UIView!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -61,6 +60,7 @@ class NowPlayingTVViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Create Now Playing BarItem
         createNowPlayingAnimation()
         
@@ -80,8 +80,8 @@ class NowPlayingTVViewController: UIViewController {
         
     
         // Hide / Show Next/Previous buttons
-        previousButton.isHidden = hideNextPreviousButtons
-        nextButton.isHidden = hideNextPreviousButtons
+        //previousButton.isHidden = hideNextPreviousButtons
+        //nextButton.isHidden = hideNextPreviousButtons
         
        
         
@@ -171,7 +171,7 @@ class NowPlayingTVViewController: UIViewController {
     }
     
     private func isPlayingDidChange(_ isPlaying: Bool) {
-        playingButton.isSelected = isPlaying
+        //playingButton.isSelected = isPlaying
         startNowPlayingAnimation(isPlaying)
     }
     
@@ -218,7 +218,7 @@ class NowPlayingTVViewController: UIViewController {
     func optimizeForDeviceSize() {
         
         // Adjust album size to fit iPhone 4s, 6s & 6s+
-        let deviceHeight = self.view.bounds.height
+        //let deviceHeight = self.view.bounds.height
         
         /*if deviceHeight == 480 {
          albumHeightConstraint.constant = 106

@@ -12,10 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    weak var stationsViewController: StationsCollectionViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // MPNowPlayingInfoCenter
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+
+        // FRadioPlayer config
+        FRadioPlayer.shared.isAutoPlay = true
+        FRadioPlayer.shared.enableArtwork = true
+        FRadioPlayer.shared.artworkSize = 900
+        
+        //Prevent ScreenSavor from showing
+        UIApplication.shared.isIdleTimerDisabled = true
+        
+        
         return true
     }
 
@@ -39,6 +52,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    override func remoteControlReceived(with event: UIEvent?) {
+        super.remoteControlReceived(with: event)
+        
+        guard let event = event, event.type == .remoteControl else { return }
+        
+        switch event.subtype {
+        case .remoteControlPlay:
+            FRadioPlayer.shared.play()
+        case .remoteControlPause:
+            FRadioPlayer.shared.pause()
+        case .remoteControlTogglePlayPause:
+            FRadioPlayer.shared.togglePlaying()
+        /*case .remoteControlNextTrack:
+            //stationsViewController?.didPressNextButton()
+        case .remoteControlPreviousTrack:
+            //stationsViewController?.didPressPreviousButton()*/
+        default:
+            break
+        }
     }
 
 
