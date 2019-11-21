@@ -32,6 +32,8 @@ class NowPlayingTVViewController: UIViewController {
     
     // MARK: - IB UI
     
+    
+    
     @IBOutlet weak var albumImageView: SpringImageView!
     @IBOutlet weak var albumHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var artistLabel: UILabel!
@@ -41,6 +43,7 @@ class NowPlayingTVViewController: UIViewController {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var airPlayView: UIView!
+    @IBOutlet weak var barsView: UIView!
     
     // MARK: - Properties
     
@@ -72,13 +75,22 @@ class NowPlayingTVViewController: UIViewController {
         
         // Set UI
         albumImageView.image = currentTrack.artworkImage
+        //albumAtvImageView.imageView = UIImageView(image: image!)
+        //albumAtvImageView.imageView?.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+        //albumAtvImageView.imageView?.image = currentTrack.artworkImage
+        //albumAtvImageView.setImage(currentTrack.artworkImage, for: UIControl.State.normal)
+        //albumAtvImageView.backgroundColor = UIColor.clear
+        
+        //albumImageView.isFocused = true
+        //albumImageView.adjustsImageWhenAncestorFocused = true
         //stationDescLabel.text = currentStation.desc
         //stationDescLabel.isHidden = currentTrack.artworkLoaded
         
         // Check for station change
         newStation ? stationDidChange() : playerStateDidChange(radioPlayer.state, animate: false)
         
-    
+        // Setup AirPlayButton
+        setupAirPlayButton()
         // Hide / Show Next/Previous buttons
         //previousButton.isHidden = hideNextPreviousButtons
         //nextButton.isHidden = hideNextPreviousButtons
@@ -91,7 +103,26 @@ class NowPlayingTVViewController: UIViewController {
     // MARK: - Setup
     //*****************************************************************
     
-    
+    func setupAirPlayButton() {
+        guard !hideAirPlayButton else {
+            airPlayView.isHidden = true
+            return
+        }
+        
+        if #available(iOS 11.0, *) {
+            let airPlayButton = AVRoutePickerView(frame: airPlayView.bounds)
+            airPlayButton.activeTintColor = globalTintColor
+            //airPlayButton.tintColor = .gray
+            airPlayView.backgroundColor = .clear
+            airPlayView.addSubview(airPlayButton)
+        } else {
+            /*let airPlayButton = MPVolumeView(frame: airPlayView.bounds)
+            airPlayButton.showsVolumeSlider = false
+            airPlayButton.showsRouteButton = true
+            airPlayView.backgroundColor = .clear
+            airPlayView.addSubview(airPlayButton)*/
+        }
+    }
     
    
     
@@ -283,12 +314,13 @@ class NowPlayingTVViewController: UIViewController {
         
         // Create Top BarButton
         let barButton = UIButton(type: .custom)
-        barButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        barButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         barButton.addSubview(nowPlayingImageView)
         nowPlayingImageView.center = barButton.center
         
-        let barItem = UIBarButtonItem(customView: barButton)
-        self.navigationItem.rightBarButtonItem = barItem
+        //let barItem = UIBarButtonItem(customView: barButton)
+        //self.navigationItem.rightBarButtonItem = barItem
+        barsView.addSubview(barButton)
     }
     
     func startNowPlayingAnimation(_ animate: Bool) {

@@ -82,6 +82,20 @@ extension AppDelegate: MPPlayableContentDataSource {
             item.isPlayable = true
             item.isStreamingContent = true
             
+            /*if station.imageURL.contains("http") {
+                let image = UIImage(named: "stationImage")
+                DispatchQueue.main.async {
+                    let imageView = UIImageView(image: image!)
+                    imageView.sd_setImage(with: URL(string: station.imageURL), placeholderImage: UIImage(named: "stationImage"),options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
+                        // Perform operation.
+                        item.artwork = MPMediaItemArtwork.init(boundsSize: image!.size, requestHandler: { (size) -> UIImage in
+                            return image!
+                        })
+                    })
+                }
+            }*/
+                
+            
             if station.imageURL.contains("http") {
                 ImageLoader.sharedLoader.imageForUrl(urlString: station.imageURL) { image, _ in
                     DispatchQueue.main.async {

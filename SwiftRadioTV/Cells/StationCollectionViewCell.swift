@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import SDWebImage
+import SDWebImage
 
 
 
@@ -27,12 +27,13 @@ class StationCollectionViewCell: UICollectionViewCell {
         
         if imageURL.contains("http") {
             
-            if let url = URL(string: station.imageURL) {
+            /*if let url = URL(string: station.imageURL) {
                 stationImageView.loadImageWithURL(url: url) { (image) in
                     // station image loaded
                 }
                 
-            }
+            }*/
+            stationImageView.sd_setImage(with: URL(string: imageURL as String))
             
         } else if imageURL != "" {
             stationImageView.image = UIImage(named: imageURL as String)

@@ -52,12 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //MSAppCenter.setLogLevel(MSLogLevel.verbose)
         
-        let installId = MSAppCenter.installId()
+        /*let installId = MSAppCenter.installId()
         print(installId!)
         //Add Push Notifications
         MSPush.setDelegate(self as? MSPushDelegate)
         //Push Notifications
-        MSAppCenter.start(appCenterID, withServices: [MSPush.self])
+        MSAppCenter.start(appCenterID, withServices: [MSPush.self])*/
 
         setupCarPlay()
         

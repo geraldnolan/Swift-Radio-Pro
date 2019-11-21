@@ -190,10 +190,18 @@ extension AboutViewController: UISearchResultsUpdating {
         // Hide the UISearchController
         tableView.setContentOffset(CGPoint(x: 0.0, y: searchController.searchBar.frame.size.height), animated: false)
         
-        // Set a black keyborad for UISearchController's TextField
-        let searchTextField = searchController.searchBar.value(forKey: "_searchField") as! UITextField
-        searchTextField.keyboardAppearance = UIKeyboardAppearance.dark
-        searchTextField.textColor = globalTintColor
+        if #available(iOS 13.0, *) {
+                   
+           searchController.searchBar.searchTextField.keyboardAppearance = UIKeyboardAppearance.dark;
+           searchController.searchBar.searchTextField.textColor = globalTintColor
+       
+       }
+       else
+       {
+           let searchTextField = searchController.searchBar.value(forKey: "_searchField") as! UITextField
+           searchTextField.keyboardAppearance = UIKeyboardAppearance.dark
+           searchTextField.textColor = globalTintColor
+       }
     }
     
     func updateSearchResults(for searchController: UISearchController) {

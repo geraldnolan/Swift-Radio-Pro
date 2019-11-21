@@ -40,9 +40,12 @@
 		73014863230ABAC500D5C046 /* SongRequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327282622747C7400232A70 /* SongRequestsTableViewCell.swift */; };
 		73014864230ABB3200D5C046 /* UIImage+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9761B1B1A8F3200F52B1E /* UIImage+DropShadow.swift */; };
 		73014867230B656A00D5C046 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73014866230B656A00D5C046 /* ColorService.swift */; };
-		73014869230B65D300D5C046 /* ColorSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73014868230B65D200D5C046 /* ColorSwitchViewController.swift */; };
+		73014869230B65D300D5C046 /* SongRequestsTVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73014868230B65D200D5C046 /* SongRequestsTVViewController.swift */; };
 		7327282522747A2B00232A70 /* SongRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327282422747A2B00232A70 /* SongRequests.swift */; };
 		7327282722747C7400232A70 /* SongRequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7327282622747C7400232A70 /* SongRequestsTableViewCell.swift */; };
+		73338A792311815500952DC9 /* SongRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73338A782311815500952DC9 /* SongRequestResult.swift */; };
+		73338A7A2311828100952DC9 /* SongRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73338A782311815500952DC9 /* SongRequestResult.swift */; };
+		73338A7C23118A5700952DC9 /* AtvImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73338A7B23118A5700952DC9 /* AtvImageButton.swift */; };
 		733798FE23080BE700450180 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA8FDB42000614600050F77 /* RadioPlayer.swift */; };
 		733798FF2308140D00450180 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949E5EAF1ACB340200AB6280 /* UIImageView+Download.swift */; };
 		73379900230820D100450180 /* AnimationFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260951B45E3FA00DE671C /* AnimationFrames.swift */; };
@@ -87,6 +90,7 @@
 		7366C70723063C6C00833A1D /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA331F72AD5200CB5911 /* TransitionManager.swift */; };
 		7366C70823063C6F00833A1D /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA351F72AD5400CB5911 /* TransitionZoom.swift */; };
 		7366C70923063C7200833A1D /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F22BA371F72AD5600CB5911 /* UnwindSegue.swift */; };
+		73DEB0BA230C06B4000614D4 /* SongRequestsTVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DEB0B9230C06B4000614D4 /* SongRequestsTVTableViewCell.swift */; };
 		81AD229B21646DEA002ADFDD /* FRadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD229821646DEA002ADFDD /* FRadioPlayer.swift */; };
 		81AD229C21646DEA002ADFDD /* FRadioAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD229921646DEA002ADFDD /* FRadioAPI.swift */; };
 		81AD229D21646DEA002ADFDD /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD229A21646DEA002ADFDD /* Reachability.swift */; };
@@ -167,9 +171,11 @@
 		5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61687AAA7BD4252EAB68D047 /* Pods-SwiftRadioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadioUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftRadioUITests/Pods-SwiftRadioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		73014866230B656A00D5C046 /* ColorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
-		73014868230B65D200D5C046 /* ColorSwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSwitchViewController.swift; sourceTree = "<group>"; };
+		73014868230B65D200D5C046 /* SongRequestsTVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongRequestsTVViewController.swift; sourceTree = "<group>"; };
 		7327282422747A2B00232A70 /* SongRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequests.swift; sourceTree = "<group>"; };
 		7327282622747C7400232A70 /* SongRequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestsTableViewCell.swift; sourceTree = "<group>"; };
+		73338A782311815500952DC9 /* SongRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestResult.swift; sourceTree = "<group>"; };
+		73338A7B23118A5700952DC9 /* AtvImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtvImageButton.swift; sourceTree = "<group>"; };
 		7356BF4523024AD90042E541 /* SwiftRadioTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRadioTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7356BF4723024AD90042E541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7356BF4923024AD90042E541 /* NowPlayingTVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTVViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 		7356BF5023024ADB0042E541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7366C6DE2306304400833A1D /* StationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCollectionViewCell.swift; sourceTree = "<group>"; };
 		7366C6E923063AB800833A1D /* StationsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsCollectionViewController.swift; sourceTree = "<group>"; };
+		73DEB0B9230C06B4000614D4 /* SongRequestsTVTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongRequestsTVTableViewCell.swift; sourceTree = "<group>"; };
 		7F712F254C15653ACE12F367 /* Pods-SwiftRadio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadio.release.xcconfig"; path = "Target Support Files/Pods-SwiftRadio/Pods-SwiftRadio.release.xcconfig"; sourceTree = "<group>"; };
 		81AD229821646DEA002ADFDD /* FRadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioPlayer.swift; sourceTree = "<group>"; };
 		81AD229921646DEA002ADFDD /* FRadioAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioAPI.swift; sourceTree = "<group>"; };
@@ -335,6 +342,7 @@
 		7366C6DD2306300600833A1D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				73DEB0B9230C06B4000614D4 /* SongRequestsTVTableViewCell.swift */,
 				7366C6DE2306304400833A1D /* StationCollectionViewCell.swift */,
 			);
 			path = Cells;
@@ -343,6 +351,7 @@
 		7366C6E0230630F600833A1D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				73338A7B23118A5700952DC9 /* AtvImageButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,7 +359,7 @@
 		7366C6EB23063B8E00833A1D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				73014868230B65D200D5C046 /* ColorSwitchViewController.swift */,
+				73014868230B65D200D5C046 /* SongRequestsTVViewController.swift */,
 				7356BF4923024AD90042E541 /* NowPlayingTVViewController.swift */,
 				7366C6E923063AB800833A1D /* StationsCollectionViewController.swift */,
 			);
@@ -464,6 +473,7 @@
 				94AC70AD1AD05C6200652982 /* RadioStation.swift */,
 				94D260971B45E8B800DE671C /* Track.swift */,
 				7327282422747A2B00232A70 /* SongRequests.swift */,
+				73338A782311815500952DC9 /* SongRequestResult.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -788,6 +798,7 @@
 				7366C6E4230637AF00833A1D /* DataManager.swift in Sources */,
 				733798FF2308140D00450180 /* UIImageView+Download.swift in Sources */,
 				7366C6F623063C2800833A1D /* DesignableTabBarController.swift in Sources */,
+				73DEB0BA230C06B4000614D4 /* SongRequestsTVTableViewCell.swift in Sources */,
 				7366C6ED23063C0000833A1D /* FRadioPlayer.swift in Sources */,
 				7366C70523063C6500833A1D /* SpringTextView.swift in Sources */,
 				7366C70423063C6200833A1D /* SpringTextField.swift in Sources */,
@@ -810,9 +821,11 @@
 				7366C6E82306380500833A1D /* SwiftRadio-Settings.swift in Sources */,
 				7366C70623063C6800833A1D /* SpringView.swift in Sources */,
 				7366C70323063C5F00833A1D /* SpringLabel.swift in Sources */,
+				73338A7A2311828100952DC9 /* SongRequestResult.swift in Sources */,
 				7366C6E6230637BA00833A1D /* Track.swift in Sources */,
 				73014863230ABAC500D5C046 /* SongRequestsTableViewCell.swift in Sources */,
-				73014869230B65D300D5C046 /* ColorSwitchViewController.swift in Sources */,
+				73014869230B65D300D5C046 /* SongRequestsTVViewController.swift in Sources */,
+				73338A7C23118A5700952DC9 /* AtvImageButton.swift in Sources */,
 				7366C6EF23063C0900833A1D /* AsyncButton.swift in Sources */,
 				7366C70023063C5300833A1D /* SpringAnimation.swift in Sources */,
 				7366C6F423063C2200833A1D /* DesignableImageView.swift in Sources */,
@@ -874,6 +887,7 @@
 				81AD229B21646DEA002ADFDD /* FRadioPlayer.swift in Sources */,
 				5F22BA501F72AD5A00CB5911 /* Spring.swift in Sources */,
 				81AD229C21646DEA002ADFDD /* FRadioAPI.swift in Sources */,
+				73338A792311815500952DC9 /* SongRequestResult.swift in Sources */,
 				94AC70AE1AD05C6200652982 /* RadioStation.swift in Sources */,
 				5F22BA481F72AD5A00CB5911 /* DesignableButton.swift in Sources */,
 			);
@@ -1106,6 +1120,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B529J562AT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1115,6 +1130,7 @@
 				INFOPLIST_FILE = SwiftRadio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = co.noltech.muzikyradio;
 				PRODUCT_NAME = SwiftRadio;
 				PROVISIONING_PROFILE = "";
@@ -1136,6 +1152,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B529J562AT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1145,6 +1162,7 @@
 				INFOPLIST_FILE = SwiftRadio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = co.noltech.muzikyradio;
 				PRODUCT_NAME = SwiftRadio;
 				PROVISIONING_PROFILE = "";
